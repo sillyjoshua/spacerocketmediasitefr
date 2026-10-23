@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050914">
+<meta name="description" content="Space Rocket Media — helping creators share music, videos and ideas.">
+<title>Space Rocket Media</title>
+<style>
+:root{--bg:#050914;--panel:#0b1426;--line:rgba(145,180,226,.17);--text:#f4f8ff;--muted:#a8b6cc;--blue:#1687ff;--cyan:#00d4ef}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--text);background:radial-gradient(ellipse at 50% -20%,rgba(0,126,255,.2),transparent 48%),var(--bg);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1100px,calc(100% - 40px));margin:auto}
+nav{position:sticky;top:0;z-index:5;background:rgba(5,9,20,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;min-height:74px;gap:20px}
+.brand{font-weight:900;letter-spacing:-.04em}
+.brand small{display:block;font-size:10px;color:var(--cyan);letter-spacing:.2em}
+.links{display:flex;align-items:center;gap:22px;font-size:13px;color:var(--muted)}
+.links a:hover{color:white}
+.btn{display:inline-block;padding:12px 18px;border-radius:10px;background:linear-gradient(110deg,var(--blue),var(--cyan));color:#03101c;font-size:13px;font-weight:850;border:0;cursor:pointer;transition:.2s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.btn.ghost{color:white;background:#ffffff08;border:1px solid var(--line)}
+.hero{padding:95px 0 85px;text-align:center;position:relative;overflow:hidden}
+.rocket{font-size:70px;display:block;filter:drop-shadow(0 0 24px #1687ff);margin-bottom:18px}
+.pill{display:inline-block;border:1px solid var(--line);border-radius:30px;padding:7px 13px;background:#0c182b;color:#c7e8ff;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+h1{font-size:clamp(42px,7vw,78px);line-height:1;letter-spacing:-.07em;margin:25px auto 20px}
+.grad{background:linear-gradient(100deg,#fff,#69c7ff,#00d4ef);color:transparent;background-clip:text;-webkit-background-clip:text}
+.hero p{max-width:640px;margin:0 auto;color:var(--muted);font-size:17px}
+.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}
+section{padding:70px 0}
+.head{text-align:center;max-width:650px;margin:0 auto 34px}
+.kicker{color:var(--cyan);font-size:10px;font-weight:900;letter-spacing:.2em;text-transform:uppercase}
+h2{font-size:clamp(30px,4vw,44px);letter-spacing:-.05em;line-height:1.1;margin:12px 0}
+.head p,.card p,.music p,.step p,.join p{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{padding:26px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(150deg,#0f1e34,#080f1d);transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:#00d4ef66}
+.icon{font-size:30px;margin-bottom:18px}
+.card h3{margin:0 0 9px;font-size:18px}
+.card p{font-size:13px;margin:0}
+.tag{display:inline-block;margin-top:18px;padding:5px 9px;border-radius:6px;background:#00d4ef12;color:#75eaff;font-size:10px;font-weight:850;letter-spacing:.08em;text-transform:uppercase}
+.music{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:35px;padding:clamp(25px,5vw,50px);border:1px solid #00d4ef44;border-radius:24px;background:radial-gradient(ellipse at 100% 0%,#00d4ef18,transparent 45%),#0b1930}
+.music p{max-width:490px}
+.record{width:190px;height:190px;border-radius:50%;margin:auto;display:grid;place-items:center;background:repeating-radial-gradient(circle,#111c31 0 4px,#17243a 5px 7px);border:1px solid #263e5e;box-shadow:0 0 55px #1687ff30}
+.record span{width:75px;height:75px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--cyan));display:grid;place-items:center;color:#041021;font-size:24px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.step{border-top:1px solid var(--line);padding:20px 4px}
+.step b{color:var(--cyan);font-size:12px;letter-spacing:.15em}
+.step h3{font-size:17px}
+.step p{font-size:13px}
+.join{text-align:center;padding:55px 24px;border:1px solid var(--line);border-radius:22px;background:radial-gradient(ellipse at 50% 0%,#1687ff25,transparent 65%),#091225}
+.join p{max-width:550px;margin:15px auto 25px}
+footer{border-top:1px solid var(--line);padding:25px 0;color:#8090a8;font-size:11px}
+.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.fine{max-width:760px;color:#64748b;font-size:10px;margin-top:12px}
+@media(max-width:720px){.links{gap:12px}.links a:not(.btn){display:none}.hero{padding:70px 0}.grid,.steps,.music{grid-template-columns:1fr}.card{padding:23px}.record{width:160px;height:160px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<nav>
+<div class="wrap nav">
+<a class="brand" href="#home">🚀 SPACE ROCKET<small>MEDIA COLLECTIVE</small></a>
+<div class="links">
+<a href="#perks">Perks</a>
+<a href="#music">Music</a>
+<a href="#about">About</a>
+<a class="btn" href="#join">Get involved ↗</a>
+</div>
+</div>
+</nav>
+
+<main id="home">
+<section class="hero">
+<div class="wrap">
+<span class="rocket">🚀</span>
+<div class="pill">✦ Independent creators, shared momentum</div>
+<h1>Creators launch<br><span class="grad">better together.</span></h1>
+<p>Space Rocket Media is a growing media group helping creators get noticed, connect with audiences and bring their next big idea into orbit.</p>
+<div class="actions">
+<a class="btn" href="#perks">Explore member perks ↗</a>
+<a class="btn ghost" href="#music">Music coming soon</a>
+</div>
+</div>
+</section>
+
+<section id="perks">
+<div class="wrap">
+<div class="head">
+<div class="kicker">The member advantage</div>
+<h2>More than a name.<br><span class="grad">A launchpad.</span></h2>
+<p>Join a creator-focused group built around social perks, promotion and exciting future projects.</p>
+</div>
+<div class="grid">
+<article class="card">
+<div class="icon">☑️</div>
+<h3>X12 Blue Checkmark</h3>
+<p>Eligible members can receive a blue checkmark on X12, your friends' Twitter-style social platform, subject to platform rules and approval.</p>
+<span class="tag">Social identity</span>
+</article>
+<article class="card">
+<div class="icon">↗️</div>
+<h3>X12 Affiliate</h3>
+<p>Get support with X12 affiliate opportunities and help promoting the platform to a wider audience, where available.</p>
+<span class="tag">Creator growth</span>
+</article>
+<article class="card">
+<div class="icon">🎬</div>
+<h3>Music & Video Promotion</h3>
+<p>We'll help distribute and promote members' music, videos and creative projects to help their work reach more people.</p>
+<span class="tag">Creative reach</span>
+</article>
+</div>
+</div>
+</section>
+
+<section id="music">
+<div class="wrap">
+<div class="music">
+<div>
+<div class="kicker">Coming soon · Sound on</div>
+<h2>A new sound is<br><span class="grad">on the horizon.</span></h2>
+<p>Space Rocket Media music is coming soon. We're working towards a home for fresh sounds, releases and the artists behind them. Watch this space.</p>
+<a class="btn ghost" href="#join">Stay in the loop ↗</a>
+</div>
+<div class="record" aria-hidden="true"><span>♪</span></div>
+</div>
+</div>
+</section>
+
+<section id="about">
+<div class="wrap">
+<div class="head">
+<div class="kicker">How it works</div>
+<h2>Bring your thing.<br>We'll help it travel.</h2>
+<p>We're building a collective where creators support each other and reach people beyond their usual circles.</p>
+</div>
+<div class="steps">
+<div class="step"><b>01 / INTRODUCE</b><h3>Tell us about yourself</h3><p>Share what you create, where you post and what you're working towards.</p></div>
+<div class="step"><b>02 / PLAN</b><h3>Find your next move</h3><p>Discuss relevant perks, promotion opportunities and available support.</p></div>
+<div class="step"><b>03 / LAUNCH</b><h3>Grow together</h3><p>Share your work, support fellow members and help the collective grow.</p></div>
+</div>
+</div>
+</section>
+
+<section id="join">
+<div class="wrap">
+<div class="join">
+<div class="kicker">Your next chapter starts here</div>
+<h2>Ready for liftoff?</h2>
+<p>Interested in joining Space Rocket Media or getting your music and videos out there? Contact the team to discuss membership and current opportunities.</p>
+<!-- CHANGE THIS LINK to your real email, Discord invite or application form. -->
+<a class="btn" href="https://x12.area12.lol/" target="_blank" rel="noopener">Contact the team ↗</a>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="foot">
+<strong style="color:#dceaff">SPACE ROCKET MEDIA</strong>
+<span>Built for creators. Made to move.</span>
+<span>© <span id="year"></span> Space Rocket Media</span>
+</div>
+<p class="fine">X12 checkmarks and affiliate access depend on X12's own eligibility, approval and rules; they are not guaranteed. Space Rocket Media is not affiliated with X12 unless explicitly stated.</p>
+</div>
+</footer>
+<script>document.getElementById("year").textContent=new Date().getFullYear();</script>
+</body>
+</html>
